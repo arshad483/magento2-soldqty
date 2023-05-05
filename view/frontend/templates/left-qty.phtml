@@ -1,0 +1,28 @@
+<?php
+/**
+ * @var \Ultraplugin\SoldQty\Helper\Data $helper
+ */
+$helper = $this->helper(\Ultraplugin\SoldQty\Helper\Data::class);
+$sku = $helper->getProduct() ? $helper->getProduct()->getSku() : '';
+$typeId = $helper->getProduct() ? $helper->getProduct()->getTypeId() : '';
+?>
+<div id="left-qty-block" class="left-qty-block" style="display: none">
+    <?php if ($iconUrl = $helper->getLeftQtyIcon()): ?>
+        <img src="<?= /* @noEscape */ $iconUrl ?>" />
+    <?php endif; ?>
+    <span id="left-qty-label"></span>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Ultraplugin_SoldQty/js/left-qty": {
+                "isLeftQtyEnabled": "<?= /* @noEscape */ $helper->isLeftQtyEnabled() ?>",
+                "sku": "<?= /* @noEscape */ $sku ?>",
+                "typeId": "<?= /* @noEscape */ $typeId ?>"
+            }
+        }
+    }
+</script>
+<style>
+    <?= /* @noEscape */ $helper->getLeftQtyStyle() ?>
+</style>

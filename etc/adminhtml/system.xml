@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * UltraPlugin
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the ultraplugin.com license that is
+ * available through the world-wide-web at this URL:
+ * https://ultraplugin.com/end-user-license-agreement
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    UltraPlugin
+ * @package     Ultraplugin_SoldQty
+ * @copyright   Copyright (c) UltraPlugin (https://ultraplugin.com/)
+ * @license     https://ultraplugin.com/end-user-license-agreement
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="soldleftqty" translate="label" sortOrder="800" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label><![CDATA[Sold & Left Quantity]]></label>
+            <tab>ultraplugin</tab>
+            <resource>Ultraplugin_SoldQty::configuration</resource>
+            <group id="sold_qty" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sold Quantity Settings</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Sold Qty</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="label" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Sold Qty Label</label>
+                    <comment><![CDATA[%1 = total number of sold qty]]></comment>
+                </field>
+                <field id="multiplier" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Sold Qty Multiplier</label>
+                    <validate>validate-digits validate-zero-or-greater</validate>
+                    <comment><![CDATA[Sold Qty = Sold Qty X Sold Qty Multiplier]]></comment>
+                </field>
+                <field id="display_after" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Display After Sold Quantity</label>
+                    <validate>validate-digits validate-zero-or-greater</validate>
+                    <comment><![CDATA[Sold qty label display if Sold Qty > Display After Quantity]]></comment>
+                </field>
+                <field id="icon" translate="label comment" sortOrder="50" type="Magento\Config\Block\System\Config\Form\Field\Image" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sold Qty Icon</label>
+                    <backend_model>Ultraplugin\SoldQty\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">soldqty</base_url>
+                    <upload_dir config="system" scope_info="1">soldqty</upload_dir>
+                </field>
+                <field id="style" translate="label comment" type="textarea" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Style</label>
+                    <comment>CSS style</comment>
+                </field>
+            </group>
+            <group id="left_qty" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Left Quantity Settings</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Left Qty</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="label" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Left Qty Label</label>
+                    <comment><![CDATA[%1 = total number of left qty]]></comment>
+                </field>
+                <field id="display_after" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Display After Left Quantity</label>
+                    <validate>validate-digits validate-zero-or-greater</validate>
+                    <comment><![CDATA[Left qty label display if Left Qty < Display After Quantity]]></comment>
+                </field>
+                <field id="icon" translate="label comment" sortOrder="40" type="Magento\Config\Block\System\Config\Form\Field\Image" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Left Qty Icon</label>
+                    <backend_model>Ultraplugin\SoldQty\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">soldqty</base_url>
+                    <upload_dir config="system" scope_info="1">soldqty</upload_dir>
+                </field>
+                <field id="style" translate="label comment" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Style</label>
+                    <comment>CSS style</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,26 @@
+<?php
+/**
+ * @var \Ultraplugin\SoldQty\Helper\Data $helper
+ */
+$helper = $this->helper(\Ultraplugin\SoldQty\Helper\Data::class);
+$productId = $helper->getProduct() ? $helper->getProduct()->getId() : 0;
+?>
+<div id="sold-qty-block" class="sold-qty-block" style="display: none">
+    <?php if ($iconUrl = $helper->getSoldQtyIcon()): ?>
+        <img src="<?= /* @noEscape */ $iconUrl ?>" />
+    <?php endif; ?>
+    <span id="sold-qty-label"></span>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Ultraplugin_SoldQty/js/sold-qty": {
+                "isSoldQtyEnabled": "<?= /* @noEscape */ $helper->isSoldQtyEnabled() ?>",
+                "productId": "<?= /* @noEscape */ $productId ?>"
+            }
+        }
+    }
+</script>
+<style>
+<?= /* @noEscape */ $helper->getSoldQtyStyle() ?>
+</style>

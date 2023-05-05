@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <soldleftqty>
+            <sold_qty>
+                <enabled>1</enabled>
+                <label>Total %1 quantity already sold</label>
+                <multiplier>1</multiplier>
+                <display_after>1</display_after>
+                <style>
+<![CDATA[
+.sold-qty-block {
+    border-radius: 25px;
+    background-color: #EDFDF4;
+    font-weight: 600;
+    display: flex;
+    padding: 10px 15px;
+    align-items: center;
+    width: fit-content;
+    margin: 5px 0;
+}
+.sold-qty-block img {
+    width: 18px;
+}
+.sold-qty-block span {
+    margin-left: 5px;
+}
+]]>
+                </style>
+            </sold_qty>
+            <left_qty>
+                <enabled>1</enabled>
+                <label>Hurry Up! only %1 left in stock</label>
+                <display_after>100</display_after>
+                <style>
+<![CDATA[
+.left-qty-block {
+    border-radius: 25px;
+    background-color: #EDFDF4;
+    font-weight: 600;
+    display: flex;
+    padding: 10px 15px;
+    align-items: center;
+    width: fit-content;
+    margin: 5px 0;
+    color: red;
+}
+.left-qty-block img {
+    width: 18px;
+}
+.left-qty-block span {
+    margin-left: 5px;
+}
+]]>
+                </style>
+            </left_qty>
+        </soldleftqty>
+    </default>
+</config>
