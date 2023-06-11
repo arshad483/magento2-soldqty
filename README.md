@@ -21,7 +21,7 @@ UltraPlugin Sold & Left Qty extension allows the store owner to show how much st
 <a href="https://marketplace.magento.com/ultraplugin-module-sold-qty.html">Magento Marketplace Link</a>
 
 ### 2. Install via composer (GitHub)
-
+Run the following command in Magento 2 root folder:
 ```
 composer require ultraplugin/module-sold-qty
 php bin/magento setup:upgrade
